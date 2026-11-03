@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#090d18">
-<title>Bestie Arcade | Koti & Venky</title>
+<title>Bestie Arcade | Koti, Venky & Shreesahnth</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 :root{--bg:#090d18;--panel:#111827;--panel2:#172236;--line:#26334a;--text:#f4f7ff;--muted:#9aa8c0;--lime:#c7ff54;--cyan:#63e6e2;--pink:#ff6f91;--mono:'DM Mono',monospace;--display:'Space Grotesk',sans-serif}
@@ -20,7 +20,7 @@ footer{border-top:1px solid #ffffff12;padding:23px 0 30px;color:var(--muted);fon
 .toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);background:var(--lime);color:#101827;padding:11px 16px;border-radius:10px;font-size:12px;font-weight:700;opacity:0;pointer-events:none;transition:.25s;z-index:50}.toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:45px}.hero-art{min-height:230px}.games{grid-template-columns:repeat(2,1fr)}.game-layout{grid-template-columns:1fr}.side-panel{order:2}.flyer-list{grid-template-columns:1fr 1fr}.navlinks{gap:14px}}
 @media(max-width:560px){.container{width:calc(100% - 26px)}header{height:64px}.navlinks{display:none}.pill{padding:8px 10px}.hero h1{letter-spacing:-2.5px}.hero{padding-top:36px}.stats{gap:7px}.stat{padding:12px}.stat strong{font-size:17px}.stat span{font-size:8px}.games{grid-template-columns:1fr}.game-art{height:145px}.section-head h2{font-size:23px}.scorebar{padding:12px 9px}.scores{gap:9px}.score-cell{gap:4px}.score-cell span{font-size:8px}.score-cell strong{font-size:15px}.live{font-size:8px}.control{padding:10px;font-size:11px}.flyer-list{grid-template-columns:1fr 1fr}.flyer{gap:7px;padding:6px}.flyer img{width:40px;height:40px}.game-top h2{font-size:20px}footer{font-size:8px}}
-.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.3}.hero-friends{z-index:1;display:flex;align-items:center;justify-content:center;transform:translateY(10px)}.hero-friends img{width:clamp(112px,12vw,150px);height:190px;object-fit:cover;border:4px solid #f4f7ff;border-radius:16px;box-shadow:0 20px 30px #0008}.hero-friends img:first-child{transform:rotate(-8deg) translateX(13px)}.hero-friends img:last-child{transform:rotate(8deg) translateX(-13px)}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.3}.hero-friends{z-index:1;display:flex;align-items:center;justify-content:center;gap:16px;transform:translateY(10px)}.hero-friends img{width:clamp(96px,10vw,120px);height:170px;object-fit:cover;border:4px solid #f4f7ff;border-radius:16px;box-shadow:0 20px 30px #0008}.hero-friends img:nth-child(1){transform:rotate(-8deg) translateX(10px)}.hero-friends img:nth-child(2){transform:rotate(0deg) translateY(4px)}.hero-friends img:nth-child(3){transform:rotate(8deg) translateX(-10px)}
 </style>
 </head>
 <body>
@@ -33,10 +33,10 @@ footer{border-top:1px solid #ffffff12;padding:23px 0 30px;color:var(--muted);fon
   <section class="hero">
     <div><div class="eyebrow">✦ YOUR FRIENDSHIP. YOUR HIGH SCORE.</div>
       <h1>PLAY MORE.<br><span>LAUGH LOUDER.</span></h1>
-      <p>Welcome to your own little arcade. Pick a game, challenge your bestie, beat your high score, and run it back. Built for Koti &amp; Venky.</p>
+      <p>Welcome to your own little arcade. Pick a game, challenge your bestie, beat your high score, and run it back. Built for Koti, Venky &amp; Shreesahnth.</p>
       <div class="actions"><button class="btn primary" onclick="openGame()">PLAY BESTIE FLIGHT ↗</button><a class="btn secondary" href="#games" style="text-decoration:none">EXPLORE GAMES</a></div>
     </div>
-    <div class="hero-art"><video id="background-music" class="hero-video" src="song.mp4" loop playsinline autoplay muted preload="auto" aria-hidden="true"></video><div class="orbit"></div><span class="hero-tag tag-one">PLAYER 01</span><div class="hero-friends" aria-label="Koti and Venky"><img src="koti.jpeg" alt="Koti, player one"><img src="venky.jpeg" alt="Venky, player two"></div><span class="hero-tag tag-two">PLAYER 02</span></div>
+    <div class="hero-art"><video id="background-music" class="hero-video" src="song.mp4" loop playsinline autoplay muted preload="auto" aria-hidden="true"></video><div class="orbit"></div><span class="hero-tag tag-one">PLAYER 01</span><div class="hero-friends" aria-label="Koti, Venky and Shreesahnth"><img src="koti.jpeg" alt="Koti, player one"><img src="venky.jpeg" alt="Venky, player two"><img src="sreeshanth.jpeg" alt="Shreesahnth, player three"></div><span class="hero-tag tag-two">PLAYER 03</span></div>
   </section>
   <section class="stats">
     <div class="stat"><strong>02</strong><span>Besties</span></div><div class="stat"><strong id="home-best">00</strong><span>Flight best score</span></div><div class="stat"><strong>∞</strong><span>Rematches</span></div>
@@ -61,38 +61,62 @@ footer{border-top:1px solid #ffffff12;padding:23px 0 30px;color:var(--muted);fon
         <div class="flyer-list">
           <button class="flyer" data-index="0" aria-pressed="true"><img src="koti.jpeg" alt="Koti" onerror="this.style.display='none'"><span><b>Koti</b><small>THE ORIGINAL</small></span></button>
           <button class="flyer" data-index="1" aria-pressed="false"><img src="venky.jpeg" alt="Venky" onerror="this.style.display='none'"><span><b>Venky</b><small>THE CHALLENGER</small></span></button>
+          <button class="flyer" data-index="2" aria-pressed="false"><img src="sreeshanth.jpeg" alt="Shreesahnth" onerror="this.style.display='none'"><span><b>Shreesahnth</b><small>THE WILD CARD</small></span></button>
         </div>
         <div class="instructions"><b>HOW TO PLAY</b><br>Tap, click or press <b>Space</b> to flap upward. Slip through the gaps, avoid the hurdles and keep flying for as long as you can.<br><br><b>Tip:</b> Short, steady taps give you better control.</div>
         <div class="side-best"><span>PERSONAL BEST</span><strong id="side-best">00</strong></div>
       </aside>
     </div>
   </section>
-  <section id="about" style="padding:0 0 45px"><div class="eyebrow">MADE FOR THE FRIENDSHIP</div><h2 style="font-size:25px;margin:8px 0">One more round. Always.</h2><p style="max-width:600px;color:var(--muted);font-size:13px;line-height:1.7">Bestie Arcade is a small collection of games made for Koti &amp; Venky. More games and challenges can be added here as the arcade grows.</p></section>
+  <section id="about" style="padding:0 0 45px"><div class="eyebrow">MADE FOR THE FRIENDSHIP</div><h2 style="font-size:25px;margin:8px 0">One more round. Always.</h2><p style="max-width:600px;color:var(--muted);font-size:13px;line-height:1.7">Bestie Arcade is a small collection of games made for Koti, Venky &amp; Shreesahnth. More games and challenges can be added here as the arcade grows.</p></section>
 </main>
-<footer class="container"><span>© 2026 BESTIE ARCADE · KOTI &amp; VENKY</span><span>BUILT FOR ONE MORE TRY ↗</span></footer>
+<footer class="container"><span>© 2026 BESTIE ARCADE · KOTI · VENKY · SHREESAHNTH</span><span>BUILT FOR ONE MORE TRY ↗</span></footer>
 <div class="toast" id="toast" role="status"></div>
 <video id="venky-voice" src="napilla.mp4" loop preload="auto" playsinline aria-hidden="true" style="position:fixed;width:1px;height:1px;left:-2px;bottom:0;opacity:0;pointer-events:none"></video>
+<video id="sreeshanth-voice" src="ballaribava.mp4" loop preload="auto" playsinline aria-hidden="true" style="position:fixed;width:1px;height:1px;left:-2px;bottom:0;opacity:0;pointer-events:none"></video>
+<audio id="sreeshanth-exit" src="audioafterexit.ogg" preload="auto"></audio>
 <script>
 (() => {
   const $ = (s) => document.querySelector(s);
   const canvas = $('#game'), ctx = canvas.getContext('2d');
   const W = 600, H = 825, GROUND = 62, playerX = 155, playerW = 96, playerH = 96;
   const key = 'bestie-arcade-best-v2';
-  const flyers = [{name:'Koti',image:$('#play-section .flyer[data-index="0"] img'),tint:'#ff6f91'},{name:'Venky',image:$('#play-section .flyer[data-index="1"] img'),tint:'#63e6e2'}];
+  const flyers = [{name:'Koti',image:$('#play-section .flyer[data-index="0"] img'),tint:'#ff6f91'},{name:'Venky',image:$('#play-section .flyer[data-index="1"] img'),tint:'#63e6e2'},{name:'Shreesahnth',image:$('#play-section .flyer[data-index="2"] img'),tint:'#ffd166'}];
   let selected=0, state='ready', paused=false, soundOn=false, score=0, best=0, y=400, velocity=0, obstacles=[], frame=0, audio=null, raf=0;
   try { best = Number(localStorage.getItem(key)) || 0; } catch(e) { best=0; }
   const scoreEl=$('#score'),bestEl=$('#best'),levelEl=$('#level'),statusEl=$('#game-status');
   const startBtn=$('#start-button'),pauseBtn=$('#pause-button');
   const music=$('#background-music'),musicBtn=$('#music-button');
   const venkyVoice=$('#venky-voice');
-  venkyVoice.volume=.9;
+  const sreeshanthVoice=$('#sreeshanth-voice');
+  const sreeshanthExit=$('#sreeshanth-exit');
+  [venkyVoice,sreeshanthVoice].forEach(v => { if(v) v.volume = .9; });
+  sreeshanthExit.volume=.9;
   let musicEnabled=true;
   music.volume=.28;
   music.muted=true;
+  function stopAllSongs(){[music,venkyVoice,sreeshanthVoice,sreeshanthExit].forEach(v=>{if(!v)return;v.pause();v.currentTime=0;v.muted=true;});}
+  function playSelectedSong(){
+    stopAllSongs();
+    if(!musicEnabled) return;
+    const song=[music,venkyVoice,sreeshanthVoice][selected];
+    song.muted=false;
+    song.currentTime=0;
+    song.play().catch(()=>{
+      musicEnabled=false;
+      musicBtn.textContent='MUSIC OFF';
+      musicBtn.setAttribute('aria-pressed','false');
+      status('Music could not play');
+      const toast=$('#toast');
+      toast.textContent='Could not play '+song.currentSrc.split('/').pop();
+      toast.classList.add('show');
+      setTimeout(()=>toast.classList.remove('show'),2600);
+    });
+  }
   function updateBest(){ $('#home-best').textContent=String(best).padStart(2,'0');bestEl.textContent=String(best).padStart(2,'0');$('#side-best').textContent=String(best).padStart(2,'0'); }
   function updateScore(){scoreEl.textContent=String(score).padStart(2,'0');levelEl.textContent=String(Math.floor(score/5)+1).padStart(2,'0');if(score>best){best=score;try{localStorage.setItem(key,String(best));}catch(e){}updateBest();}}
   function status(s){statusEl.textContent=s.toUpperCase();}
-  function startMusic(){if(!musicEnabled)return;music.muted=false;if(!music.paused)return;music.play().catch(()=>{musicEnabled=false;music.muted=true;musicBtn.textContent='MUSIC OFF';musicBtn.setAttribute('aria-pressed','false');status('Music could not play');const toast=$('#toast');toast.textContent='This browser cannot decode song.mp4';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2600);});}
+  function startMusic(){playSelectedSong();}
   function rounded(x,y,w,h,r,color){ctx.fillStyle=color;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill();}
   function background(){
     const sky=ctx.createLinearGradient(0,0,0,H);sky.addColorStop(0,'#173b53');sky.addColorStop(.58,'#416b70');sky.addColorStop(1,'#d9b879');ctx.fillStyle=sky;ctx.fillRect(0,0,W,H);
@@ -117,7 +141,7 @@ footer{border-top:1px solid #ffffff12;padding:23px 0 30px;color:var(--muted);fon
     else{ctx.fillStyle='#e9c88c';ctx.fillRect(-playerW/2,-playerH/2,playerW,playerH);ctx.fillStyle='#101827';ctx.font='bold 44px sans-serif';ctx.textAlign='center';ctx.fillText(f.name[0],0,15);}
     ctx.restore();ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.beginPath();ctx.arc(0,0,playerW/2+1,0,Math.PI*2);ctx.stroke();ctx.restore();
   }
-  function overlay(title,detail,prompt){ctx.fillStyle='#07101bd9';ctx.beginPath();ctx.roundRect(35,115,W-70,205,16);ctx.fill();ctx.textAlign='center';ctx.fillStyle='#c7ff54';ctx.font='500 15px "DM Mono",monospace';ctx.fillText('KOTI  +  VENKY',W/2,165);ctx.fillStyle='#fff';ctx.font='700 39px "Space Grotesk",sans-serif';ctx.fillText(title,W/2,218);ctx.fillStyle='#dce5f0';ctx.font='17px "Space Grotesk",sans-serif';ctx.fillText(detail,W/2,255);ctx.fillStyle='#c7ff54';ctx.font='500 11px "DM Mono",monospace';ctx.fillText(prompt,W/2,289);}
+  function overlay(title,detail,prompt){ctx.fillStyle='#07101bd9';ctx.beginPath();ctx.roundRect(35,115,W-70,205,16);ctx.fill();ctx.textAlign='center';ctx.fillStyle='#c7ff54';ctx.font='500 15px "DM Mono",monospace';ctx.fillText(flyers.map(f=>f.name.toUpperCase()).join('  +  '),W/2,165);ctx.fillStyle='#fff';ctx.font='700 39px "Space Grotesk",sans-serif';ctx.fillText(title,W/2,218);ctx.fillStyle='#dce5f0';ctx.font='17px "Space Grotesk",sans-serif';ctx.fillText(detail,W/2,255);ctx.fillStyle='#c7ff54';ctx.font='500 11px "DM Mono",monospace';ctx.fillText(prompt,W/2,289);}
   function render(){background();obstacles.forEach(hurdle);drawPlayer();ctx.textAlign='left';ctx.fillStyle='#ffffffcc';ctx.font='500 14px "DM Mono",monospace';ctx.fillText('LEVEL '+(Math.floor(score/5)+1),20,32);ctx.textAlign='center';ctx.font='700 46px "Space Grotesk",sans-serif';ctx.lineWidth=4;ctx.strokeStyle='#07101b99';ctx.fillStyle='#fff';ctx.strokeText(String(score),W/2,88);ctx.fillText(String(score),W/2,88);
     if(state==='ready')overlay('BESTIE FLIGHT','A little lift goes a long way.','TAP OR PRESS SPACE TO START');
     if(state==='over')overlay('GAME OVER',`${flyers[selected].name}, your score: ${score}`,'TAP OR PRESS SPACE TO TRY AGAIN');
@@ -126,10 +150,10 @@ footer{border-top:1px solid #ffffff12;padding:23px 0 30px;color:var(--muted);fon
   function addObstacle(){let level=Math.floor(score/5)+1,gap=Math.max(170,285-(level-1)*13),center=H/2-gap/2,range=55+(level-1)*12,min=Math.max(70,center-range),max=Math.min(H-GROUND-gap-45,center+range),top=min+Math.random()*Math.max(20,max-min);obstacles.push({x:W+20,w:66,top,bottom:top+gap,scored:false});}
   async function tone(freq,duration){if(!soundOn)return;try{audio ||= new (window.AudioContext||window.webkitAudioContext)();if(audio.state==='suspended')await audio.resume();let osc=audio.createOscillator(),gain=audio.createGain();osc.frequency.value=freq;gain.gain.setValueAtTime(.08,audio.currentTime);gain.gain.exponentialRampToValueAtTime(.001,audio.currentTime+duration);osc.connect(gain);gain.connect(audio.destination);osc.start();osc.stop(audio.currentTime+duration);}catch(e){soundOn=false;$('#sound-button').textContent='SFX OFF';$('#sound-button').setAttribute('aria-pressed','false');}}
   function start(){score=0;y=400;velocity=0;obstacles=[];frame=0;paused=false;state='playing';addObstacle();startBtn.textContent='Flap!';pauseBtn.disabled=false;pauseBtn.textContent='Pause';status(flyers[selected].name+' is flying');updateScore();startMusic();flap();}
-  function flap(){if(state==='ready'||state==='over'){start();return;}if(paused||state!=='playing')return;velocity=-5.1;tone(520,.05);}
-  function finish(){if(state!=='playing')return;state='over';paused=false;pauseBtn.disabled=true;startBtn.textContent='Fly again';status('Flight complete');tone(170,.15);}
+  function flap(){if(state==='ready'||state==='over'){start();return;}if(paused||state!=='playing')return;velocity=-5.7;tone(520,.05);}
+  function finish(){if(state!=='playing')return;state='over';paused=false;pauseBtn.disabled=true;startBtn.textContent='Fly again';status('Flight complete');tone(170,.15);if(selected===2&&musicEnabled){stopAllSongs();sreeshanthExit.muted=false;sreeshanthExit.play().catch(()=>{const toast=$('#toast');toast.textContent='Could not play audioafterexit.ogg';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2600);});}}
   function collide(o){let p={l:playerX-playerW*.37,r:playerX+playerW*.37,t:y-playerH*.37,b:y+playerH*.37};return p.r>o.x&&p.l<o.x+o.w&&(p.t<o.top||p.b>o.bottom);}
-  function tick(){if(state==='playing'&&!paused){frame++;velocity+=.23;y+=velocity;let level=Math.floor(score/5)+1,speed=Math.min(1.5+(level-1)*.16,3.5);
+  function tick(){if(state==='playing'&&!paused){frame++;velocity+=.26;y+=velocity;let level=Math.floor(score/5)+1,speed=Math.min(2.1+(level-1)*.22,4.4);
       for(const o of obstacles){o.x-=speed;if(!o.scored&&o.x+o.w<playerX){o.scored=true;score++;updateScore();tone(740,.06);if(score%5===0)status('Level '+(Math.floor(score/5)+1)+' reached');}if(collide(o))finish();}
       obstacles=obstacles.filter(o=>o.x+o.w>-20);if(!obstacles.length||obstacles[obstacles.length-1].x<W-320)addObstacle();if(y-playerH*.42<0||y+playerH*.42>H-GROUND)finish();
     }else{frame++;if(state==='ready')y=400+Math.sin(frame*.045)*9;}
@@ -138,12 +162,12 @@ footer{border-top:1px solid #ffffff12;padding:23px 0 30px;color:var(--muted);fon
   function closeGame(){state='ready';paused=false;pauseBtn.disabled=true;startBtn.textContent='Start flight';status('Ready when you are');document.querySelector('#play-section').style.display='none';document.querySelector('#games').scrollIntoView({behavior:'smooth'});render();}
   window.openGame=openGame;window.closeGame=closeGame;
   window.comingSoon=()=>{const t=$('#toast');t.textContent='This game is coming soon. Stay tuned!';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200);};
-  document.querySelectorAll('.flyer').forEach(btn=>btn.addEventListener('click',()=>{selected=Number(btn.dataset.index);document.querySelectorAll('.flyer').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===selected)));if(selected===1){venkyVoice.currentTime=0;venkyVoice.play().catch(()=>{const toast=$('#toast');toast.textContent='Could not play napilla.mp4 in this browser';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2600);});}else{venkyVoice.pause();venkyVoice.currentTime=0;}if(state!=='playing')render();}));
+  document.querySelectorAll('.flyer').forEach(btn=>btn.addEventListener('click',()=>{selected=Number(btn.dataset.index);document.querySelectorAll('.flyer').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===selected)));playSelectedSong();if(state!=='playing')render();}));
   startBtn.addEventListener('click',()=>state==='playing'?flap():start());
   pauseBtn.addEventListener('click',()=>{if(state!=='playing')return;paused=!paused;pauseBtn.textContent=paused?'Resume':'Pause';status(paused?'Paused':flyers[selected].name+' is flying');render();});
   $('#restart-button').addEventListener('click',start);
   $('#sound-button').addEventListener('click',()=>{soundOn=!soundOn;$('#sound-button').textContent=soundOn?'SFX ON':'SFX OFF';$('#sound-button').setAttribute('aria-pressed',String(soundOn));tone(520,.07);});
-  musicBtn.addEventListener('click',()=>{musicEnabled=!musicEnabled;musicBtn.textContent=musicEnabled?'MUSIC ON':'MUSIC OFF';musicBtn.setAttribute('aria-pressed',String(musicEnabled));if(musicEnabled)startMusic();else{music.pause();music.muted=true;}});
+  musicBtn.addEventListener('click',()=>{musicEnabled=!musicEnabled;musicBtn.textContent=musicEnabled?'MUSIC ON':'MUSIC OFF';musicBtn.setAttribute('aria-pressed',String(musicEnabled));if(musicEnabled)startMusic();else{stopAllSongs();}});
   canvas.addEventListener('pointerdown',e=>{e.preventDefault();flap();});
   window.addEventListener('keydown',e=>{if(e.code==='Space'&&!e.repeat&&$('#play-section').style.display==='block'){e.preventDefault();flap();}if(e.code==='Escape'&&state==='playing')pauseBtn.click();});
   updateBest();render();cancelAnimationFrame(raf);tick();
